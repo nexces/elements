@@ -19,7 +19,7 @@ For example, let’s look at a bit of CSS3 code that adds a couple of rounded co
 Browser specific code makes using CSS3 a chore. 6 lines of code just to add rounded corners. LESS mixins to the rescue. With LESS Elements the above can be compressed to just a 1 line:
 
     #some_div {
-      #borders > .radius(5px, 0, 0, 5px);
+      #border > .radius(5px, 0, 0, 5px);
     }
 
 Looks just line shorthand CSS, with the values representing top right, bottom right, bottom left and top left corner radii in a clockwise order. To use LESS Elements, just download it (Github repo), put the “elements.less” file in your stylesheets folder and include it with 1 line of code at the top of your LESS file:
@@ -28,14 +28,16 @@ Looks just line shorthand CSS, with the values representing top right, bottom ri
     
 Currently LESS Elements includes following namespaces:
 
-[Gradients](https://github.com/Oreolek/elements/wiki/Gradients)
+#gradient
 
-[Borders](https://github.com/Oreolek/elements/wiki/Borders)
+#border
 
-[Shadows](https://github.com/Oreolek/elements/wiki/Shadows)
+#shadow
 
-[Transformations](https://github.com/Oreolek/elements/wiki/Transformations)
+#transform
 
-[Transitions](https://github.com/Oreolek/elements/wiki/Transitions)
+#3Dtransform
 
-[Layout](https://github.com/Oreolek/elements/wiki/Layout)
+#transition
+
+#content
