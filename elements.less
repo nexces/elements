@@ -121,16 +121,31 @@
   .text(@arguments) {
     -webkit-text-shadow: @arguments;
     -moz-text-shadow: @arguments;
-    text-shadow: @arguments;
     -ms-text-shadow: @arguments;
     -o-text-shadow: @arguments;
     -khtml-text-shadow: @arguments;
- }
- .none() {
+    text-shadow: @arguments;
+  }
+  .textInset(@arguments, @color: #999) {
+    background-color: @color;
+    color: transparent;
+    -webkit-text-shadow: @arguments;
+    -moz-text-shadow: @arguments;
+    -ms-text-shadow: @arguments;
+    -o-text-shadow: @arguments;
+    -khtml-text-shadow: @arguments;
+    text-shadow: @arguments;
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    -o-background-clip: text;
+    -ms-background-clip: text;
+    background-clip: text;
+  }
+  .none() {
     -webkit-box-shadow: none;
     -moz-box-shadow: none;
     box-shadow: none;
- }
+  }
 }
 
 #transform {
@@ -220,6 +235,16 @@
     -moz-transition-duration: @duration;
     -webkit-transition-duration: @duration;
     transition-duration: @duration;
+  }
+}
+
+#filter {
+  .blur(@blur: 1px) {
+    -webkit-filter: blur(@blur);
+    -moz-filter: blur(@blur);
+    -ms-filter: blur(@blur);
+    -o-filter: blur(@blur);
+    filter: blur(@blur);
   }
 }
 
