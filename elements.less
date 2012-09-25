@@ -101,21 +101,25 @@
   .drop(@x-axis: 0, @y-axis: 1px, @blur: 2px, @alpha: 0.1, @color: #000) {
     -webkit-box-shadow: @x-axis @y-axis @blur fadeout(@color, 100-(@alpha*100));
     -moz-box-shadow: @x-axis @y-axis @blur fadeout(@color, 100-(@alpha*100));
+    -o-box-shadow: @x-axis @y-axis @blur fadeout(@color, 100-(@alpha*100));
     box-shadow: @x-axis @y-axis @blur fadeout(@color, 100-(@alpha*100));
   }
   .inner(@horizontal:0, @vertical:1px, @blur:2px, @alpha: 0.4, @color: #000) {
     -webkit-box-shadow: inset @horizontal @vertical @blur fadeout(@color, 100-(@alpha*100));
     -moz-box-shadow: inset @horizontal @vertical @blur fadeout(@color, 100-(@alpha*100));
+    -o-box-shadow: inset @horizontal @vertical @blur fadeout(@color, 100-(@alpha*100));
     box-shadow: inset @horizontal @vertical @blur fadeout(@color, 100-(@alpha*100));
   }
   .both(@horizontalOut:0, @verticalOut:1px, @blurOut:2px, @alphaOut: 0.4, @colorOut: #000,@horizontalIn:0, @verticalIn:1px, @blurIn:2px, @alphaIn: 0.4, @colorIn: #000) {
     -webkit-box-shadow: @horizontalOut @verticalOut @blurOut fadeout(@colorOut, 100-(@alphaOut*100)), inset @horizontalIn @verticalIn @blurIn fadeout(@colorIn, 100-(@alphaIn*100));
     -moz-box-shadow: @horizontalOut @verticalOut @blurOut fadeout(@colorOut, 100-(@alphaOut*100)), inset @horizontalIn @verticalIn @blurIn fadeout(@colorIn, 100-(@alphaIn*100));
+    -o-box-shadow: @horizontalOut @verticalOut @blurOut fadeout(@colorOut, 100-(@alphaOut*100)), inset @horizontalIn @verticalIn @blurIn fadeout(@colorIn, 100-(@alphaIn*100));
     box-shadow: @horizontalOut @verticalOut @blurOut fadeout(@colorOut, 100-(@alphaOut*100)), inset @horizontalIn @verticalIn @blurIn fadeout(@colorIn, 100-(@alphaIn*100));
   }
   .box(@arguments) {
     -webkit-box-shadow: @arguments;
     -moz-box-shadow: @arguments;
+    -o-box-shadow: @arguments;
     box-shadow: @arguments;
   }
   .text(@arguments) {
@@ -144,20 +148,23 @@
   .none() {
     -webkit-box-shadow: none;
     -moz-box-shadow: none;
+    -o-box-shadow: none;
     box-shadow: none;
   }
 }
 
 #transform {
-  .rotation(@deg:5deg){
+  .rotate(@deg:5deg){
     -webkit-transform: rotate(@deg);
     -moz-transform: rotate(@deg);
-    transform: rotate(@deg);
+    -o-transform: rotate(@deg);
     -ms-transform: rotate(@deg);
+    transform: rotate(@deg);
   }
   .scale(@ratio:1.5){
     -webkit-transform:scale(@ratio);
     -moz-transform:scale(@ratio);
+    -o-transform:scale(@ratio);
     transform:scale(@ratio);
   }
   .translate(@x:0, @y:0) {
@@ -169,18 +176,19 @@
   }
   .opacity(@opacity: 0.5) {
     @percent: @opacity * 100;
-    /* IE 8 */
     -ms-filter: ~"progid:DXImageTransform.Microsoft.Alpha(opacity=@{percent})";
-    /* IE 5-7 */
     filter: ~"alpha(opacity=@{percent})";
-    /* Netscape */
     -moz-opacity: @opacity;
-    /* Safari 1.x */
     -khtml-opacity: @opacity;
-    /* Webkit */
     -webkit-opacity: @opacity;
-    /* Good browsers */
     opacity: @opacity;
+  }
+  .origin(@origin) {
+    -webkit-transform-origin: @origin;
+    -moz-transform-origin: @origin;
+    -o-transform-origin: @origin;
+    -ms-transform-origin: @origin;
+    transform-origin: @origin;
   }
 }
 
