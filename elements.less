@@ -188,6 +188,7 @@
     @percent: @opacity * 100;
     -ms-filter: ~"progid:DXImageTransform.Microsoft.Alpha(opacity=@{percent})";
     filter: ~"alpha(opacity=@{percent})";
+    -ms-opacity: @opacity;
     -moz-opacity: @opacity;
     -khtml-opacity: @opacity;
     -webkit-opacity: @opacity;
