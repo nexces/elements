@@ -177,6 +177,12 @@
     -o-transform:scale(@ratio);
     transform:scale(@ratio);
   }
+  .scale(@ratioX:1.5,@ratioY:1.5){
+    -webkit-transform:scale(@ratioX,@ratioY);
+    -moz-transform:scale(@ratioX,@ratioY);
+    -o-transform:scale(@ratioX,@ratioY);
+    transform:scale(@ratioX,@ratioY);
+  }
   .translate(@x:0, @y:0) {
     -moz-transform: translate(@x, @y);
     -webkit-transform: translate(@x, @y);
